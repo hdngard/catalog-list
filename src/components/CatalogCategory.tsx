@@ -6,10 +6,11 @@ import {useLocation, useNavigate} from "react-router-dom";
 import {useAppDispatch} from "../hooks/redux";
 import {setRobotsMetaIndex} from "../store/slices/main/mainSlice";
 import {sortByName} from "../utils/sortByName";
+import { ICatalog } from "../models/ICatalog";
 
 export function CatalogCategory() {
     const {data: catalog, isLoading, error} = useGetCatalogQuery();
-    const [data, setData] = useState(undefined);
+    const [data, setData] = useState<ICatalog | undefined>(undefined);
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -24,7 +25,7 @@ export function CatalogCategory() {
     // индексируется ли страница с текущей категорией
     useEffect(() => {
         dispatch(setRobotsMetaIndex(Boolean(category?.index)));
-    }, [category]);
+    }, [dispatch, category]);
 
 
     if (isLoading) {
@@ -32,7 +33,7 @@ export function CatalogCategory() {
     }
 
     if (error) {
-        return <div>{error}</div>
+        return <>{error}</>
     }
 
     return (

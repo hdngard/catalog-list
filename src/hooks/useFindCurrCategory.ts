@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import {findCurrCategory} from "../utils/findCurrCategory";
 import {ICategory} from "../models/ICategory";
 
-export function useFindCurrCategory(categories: ICategory[], pathname: string) {
+export function useFindCurrCategory(categories: ICategory[] | undefined, pathname: string) {
     const [category, setCategory] = useState<ICategory | undefined>(undefined)
 
     useEffect(() => {

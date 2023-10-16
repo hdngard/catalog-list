@@ -1,3 +1,3 @@
 # React v18 + TypeScript + Vite
 
-npm run dev - for start
+start app with -> npm run dev

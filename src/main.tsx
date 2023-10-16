@@ -5,7 +5,7 @@ import App from './App.tsx'
 import {store} from "./store/store";
 import './index.scss'
 
-const root = ReactDOMClient.createRoot(document.getElementById('root'));
+const root = ReactDOMClient.createRoot(document.getElementById('root')!);
 
 root.render(
     <React.StrictMode>

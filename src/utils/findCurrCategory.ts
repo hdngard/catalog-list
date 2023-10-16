@@ -1,6 +1,6 @@
 import {ICategory} from "../models/ICategory";
 
-export function findCurrCategory(array: ICategory[] | null, slugs: string[]): ICategory | undefined{
+export function findCurrCategory(array: ICategory[] | undefined | null, slugs: string[]): ICategory | undefined{
     if (!Array.isArray(array) || !slugs.length) {
         return;
     }

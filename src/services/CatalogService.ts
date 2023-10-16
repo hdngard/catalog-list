@@ -1,11 +1,11 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
-import {ICatalog} from "../models/ICatalog";
+import { ICatalog } from '../models/ICatalog';
 
 export const catalogApi = createApi({
     reducerPath: 'catalogApi',
     baseQuery: fetchBaseQuery({baseUrl: 'https://express-shina.ru/vacancy/'}),
     endpoints: (build) => ({
-        getCatalog: build.query<ICatalog>({
+        getCatalog: build.query<ICatalog, void>({
             query: () => ({
                 url: 'catalog'
             })
