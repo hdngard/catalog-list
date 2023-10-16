@@ -8,7 +8,7 @@ export function Layout() {
     return (
         <HelmetProvider>
             <Helmet>
-                <meta name="robots" content={`${index}`} />
+                <meta name="robots" content={index ? 'index' : 'noindex'} />
             </Helmet>
             <Outlet/>
         </HelmetProvider>
